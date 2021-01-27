@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador para casório</title>
+    <style type="text/css">
+    *{margin:0;padding:0;}
+    html,body,.div{width:100%;height:100%;font:1.5em sans-serif;text-align:center;}
+    .div{position:relative;}
+    .span{top:50%;left:50%;width:100%;display:block;position:absolute;transform:translate(-50%, -50%);}
+    </style>
+</head>
+<body>
+    <div class="div"></div>
+    <script>
+        const milliseconds = 1000;
+        const seconds = minutes = 60;
+        const hours = 24;
+        const today = new Date(); today.setHours(0, 0, 0, 0);
+        const wedding = new Date(2021, 3, 3);
+
+        const div = document.querySelector('.div');
+        if (div){
+            const remainingDays = (wedding-today)/(milliseconds*seconds*minutes*hours);
+            div.innerHTML=`
+            <span class='span'>
+                Faltam<br />
+                <strong>${remainingDays}</strong><br />
+                pro casamento!<br /><br />
+                <i>${wedding.toLocaleDateString('pt-BR')}</i>
+            </span>`
+        }
+    </script>
+</body>
+</html>
