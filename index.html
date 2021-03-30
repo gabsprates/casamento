@@ -11,8 +11,10 @@
         background: var(--bg-color, #fefefe);
     }
     @media (prefers-color-scheme: dark) {
-        --bg-color: #333;
-        --font-color: #fff;
+        html {
+            --bg-color: #333;
+            --font-color: #fff;
+        }
     }
     html,body,.div{width:100%;height:100%;font:1.5em sans-serif;text-align:center;}
     .div{position:relative;}
