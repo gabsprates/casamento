@@ -30,6 +30,14 @@
             const today = new Date(); today.setHours(0, 0, 0, 0);
             const wedding = new Date(2021, 3, 3);
 
+            if (today > wedding) {
+                return `
+                <span class='span'>
+                    <strong>Já casei!!!</strong><br />
+                    <i>${wedding.toLocaleDateString('pt-BR')}</i>
+                </span>`
+            }
+
             const hours = 24;
             const milliseconds = 1000;
             const seconds = minutes = 60;
