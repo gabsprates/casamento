@@ -24,22 +24,29 @@
 <body>
     <div class="div"></div>
     <script>
-        const milliseconds = 1000;
-        const seconds = minutes = 60;
-        const hours = 24;
-        const today = new Date(); today.setHours(0, 0, 0, 0);
-        const wedding = new Date(2021, 3, 3);
-
         const div = document.querySelector('.div');
-        if (div){
+
+        const render = () => {
+            const today = new Date(); today.setHours(0, 0, 0, 0);
+            const wedding = new Date(2021, 3, 3);
+
+            const hours = 24;
+            const milliseconds = 1000;
+            const seconds = minutes = 60;
             const remainingDays = (wedding-today)/(milliseconds*seconds*minutes*hours);
-            div.innerHTML=`
+
+            return `
             <span class='span'>
                 Faltam<br />
                 <strong>${remainingDays}</strong><br />
                 pro casamento!<br /><br />
                 <i>${wedding.toLocaleDateString('pt-BR')}</i>
             </span>`
+        };
+
+
+        if (div) {
+            div.innerHTML = render();
         }
     </script>
 </body>
